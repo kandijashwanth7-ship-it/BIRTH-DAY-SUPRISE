@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Birthday Surprise Ladduulu ✨</title>
+  <style>
+*{box-sizing:border-box}
+:root{--pink:#ff5ca8;--purple:#8b5cf6;--cyan:#55d9ff;--yellow:#ffe66d;--ink:#33234b}
+body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff0f7 0%,#f1eaff 45%,#e8fbff 100%);overflow-x:hidden}
+.ambient{position:fixed;inset:-20%;z-index:-2;background:radial-gradient(circle at 15% 25%,#ffb7dd88,transparent 28%),radial-gradient(circle at 80% 20%,#a5a0ff88,transparent 30%),radial-gradient(circle at 55% 85%,#8ceaff88,transparent 32%);filter:blur(12px);animation:floatbg 12s ease-in-out infinite alternate}
+@keyframes floatbg{to{transform:translate(3%,2%) scale(1.08)}}
+.site-shell{width:min(960px,94vw);min-height:94vh;margin:3vh auto;padding:22px 28px 18px;background:#ffffffb8;border:1px solid #ffffffd9;border-radius:32px;box-shadow:0 25px 90px #7655a322;backdrop-filter:blur(18px);display:flex;flex-direction:column;position:relative}
+.topline{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;letter-spacing:.18em;font-weight:700;color:#9679b5}
+.slide{display:none;flex:1;min-height:590px;text-align:center;align-items:center;justify-content:center;flex-direction:column;padding:28px 10px 18px;position:relative;animation:slideIn .65s ease}
+.slide.active{display:flex}
+@keyframes slideIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+.eyebrow{color:#a16bb4;text-transform:uppercase;font-size:.75rem;font-weight:700;letter-spacing:.18em;margin:8px 0 14px}
+.hero-title,.birthday-title,.section-title{font-family:'Baloo 2',cursive;line-height:.98;margin:0;color:#38234e;font-weight:800}
+.hero-title{font-size:clamp(2.6rem,7vw,5.2rem)}.birthday-title{font-size:clamp(3.3rem,9vw,7rem);letter-spacing:.02em}
+.section-title{font-size:clamp(2.5rem,6vw,4.5rem)}
+.gradient-text{background:linear-gradient(100deg,#ff4f9a,#9b5cff 48%,#20bce9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.soft-copy{max-width:570px;color:#806c95;font-size:1rem;line-height:1.8;margin:15px auto 24px}
+.primary-btn{border:0;border-radius:999px;padding:15px 25px;background:linear-gradient(100deg,#ff5ca8,#965dff);color:white;font:700 1rem 'Poppins',sans-serif;box-shadow:0 12px 28px #bb65d94d;cursor:pointer;transition:.25s;position:relative;z-index:2}
+.primary-btn span{margin-left:10px}.primary-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 17px 34px #bb65d966}
+.tiny-hint{font-size:.75rem;color:#ad9abb;margin-top:18px}
+.gift{font-size:clamp(5rem,14vw,9rem);cursor:pointer;filter:drop-shadow(0 15px 14px #bc70d744);animation:bob 2.4s ease-in-out infinite;transition:transform .3s}
+.gift:hover{transform:rotate(-9deg) scale(1.1)}@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+.sparkle,.final-stars{color:#ff9acb;letter-spacing:.8em;font-size:1.2rem;margin:10px}
+.name-display{font-family:'Baloo 2',cursive;font-size:clamp(2rem,6vw,4rem);margin:0;color:#ff5ca8;text-shadow:0 5px 0 #ffd4e8}
+.cake-emoji{font-size:4.4rem;animation:bob 2s infinite}.balloon{position:absolute;font-size:4rem;animation:balloon 5s ease-in-out infinite}.balloon-one{left:8%;top:20%}.balloon-two{right:8%;top:28%;animation-delay:1.4s}@keyframes balloon{50%{transform:translateY(-35px) rotate(9deg)}}
+.photo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;width:100%;max-width:790px;margin:22px auto}
+.photo-card{background:white;padding:9px 9px 14px;border-radius:15px;box-shadow:0 9px 25px #64478a1c;transform:rotate(var(--tilt));transition:.3s;cursor:pointer}
+.photo-card:hover{transform:rotate(0) translateY(-8px) scale(1.04);z-index:2}.photo-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:9px;display:block}.photo-card p{font-size:.7rem;color:#9477aa;margin:10px 2px 0;font-weight:600}
+.video-area{width:100%;max-width:620px;margin:0 auto 20px}.video-card{padding:12px;background:#fff;border-radius:18px;box-shadow:0 8px 25px #64478a18}.video-card video{width:100%;max-height:260px;border-radius:12px;background:#21182e}.video-card p{margin:7px 0 0;font-size:.8rem;color:#9278a9}
+.letter-wrap{width:min(600px,100%);min-height:230px;display:flex;align-items:center;justify-content:center;margin:15px auto}
+.envelope{border:0;background:linear-gradient(145deg,#ffc4df,#c9b5ff);border-radius:25px;padding:30px 55px;box-shadow:0 18px 40px #a978c433;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;transition:.3s}.envelope:hover{transform:rotate(-3deg) scale(1.05)}.envelope-icon{font-size:5rem}.envelope-label{font-weight:700;color:#774e9d}
+.letter{background:#fffdf9;border:2px dashed #ffc0dc;border-radius:20px;padding:24px 28px;text-align:left;box-shadow:0 15px 35px #a978c422;animation:openLetter .6s ease}.letter h2{font-family:'Baloo 2';color:#e94e9b;margin:0 0 12px}.letter p{color:#776483;line-height:1.8;white-space:pre-line}.signature{text-align:right;font-weight:700;color:#e94e9b!important}.hidden{display:none!important}
+
+/* Added surprise balloon slide */
+.pop-balloon-grid{display:grid;grid-template-columns:repeat(3,minmax(75px,115px));gap:22px 28px;justify-content:center;margin:28px auto;max-width:500px}
+.pop-balloon{border:0;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;transition:transform .25s;animation:popFloat 2.8s ease-in-out infinite}
+.pop-balloon:nth-child(2n){animation-delay:.45s}.pop-balloon:nth-child(3n){animation-delay:.9s}
+.pop-balloon .shape{width:76px;height:98px;border-radius:50% 50% 46% 46%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;font-weight:800;box-shadow:inset -10px -10px 18px #00000018,0 12px 22px #8b5cf622;position:relative}
+.pop-balloon .shape:after{content:"";position:absolute;bottom:-9px;border-left:8px solid transparent;border-right:8px solid transparent;border-top:13px solid var(--balloon-color)}
+.pop-balloon .string{height:28px;width:1px;background:#b7a3c9}
+.pop-balloon:hover{transform:translateY(-8px) scale(1.08)}
+.pop-balloon.popped{animation:balloonPop .35s forwards;pointer-events:none}
+@keyframes popFloat{50%{transform:translateY(-12px)}}
+@keyframes balloonPop{to{opacity:0;transform:scale(1.6);visibility:hidden}}
+.balloon-message{max-width:520px;width:92%;margin:8px auto 20px;padding:22px;background:#fff;border:1px solid #ffe0ef;border-radius:22px;box-shadow:0 12px 30px #bb65d922;color:#e94e9b;font-family:'Baloo 2',cursive;font-size:clamp(1.2rem,3vw,1.8rem);animation:openLetter .45s ease}
+@media(max-width:500px){.pop-balloon-grid{gap:14px 12px}.pop-balloon .shape{width:64px;height:84px}}
+
+.final-cake{font-size:7rem;cursor:pointer;animation:bob 2s infinite;filter:drop-shadow(0 12px 14px #b36dd533)}.final-message{max-width:600px;font-family:'Baloo 2';font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;color:#e94e9b;margin:10px auto 20px;line-height:1.3}
+.slide-dots{display:flex;justify-content:center;gap:10px;padding:12px}.dot{width:10px;height:10px;border:0;border-radius:50%;background:#d9cbe8;cursor:pointer;transition:.2s}.dot.active{background:#ff5ca8;transform:scale(1.35)}
+footer{text-align:center;color:#b09ac2;font-size:.7rem;padding:6px}
+#confetti-layer,#hearts-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}
+.confetti{position:absolute;top:-20px;width:9px;height:14px;animation:fall linear forwards}.heart{position:absolute;bottom:-30px;font-size:20px;animation:heartup 5s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}@keyframes heartup{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@keyframes openLetter{from{opacity:0;transform:scale(.8) rotate(3deg)}to{opacity:1;transform:none}}
+@media(max-width:650px){.site-shell{padding:16px 15px;border-radius:24px;min-height:96vh;margin:2vh auto}.slide{min-height:570px;padding:22px 2px}.photo-grid{grid-template-columns:repeat(2,1fr);max-width:360px}.photo-card:last-child{grid-column:span 2;width:55%;justify-self:center}.balloon-one{left:1%;top:14%}.balloon-two{right:1%;top:22%}.balloon{font-size:2.5rem}.soft-copy{font-size:.9rem}.topline{font-size:.62rem}}
+
+</style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div id="confetti-layer" aria-hidden="true"></div>
+  <div id="hearts-layer" aria-hidden="true"></div>
+
+  <main class="site-shell">
+    <div class="topline"><span>✦ A LITTLE SURPRISE ✦</span><span id="slide-counter">01 / 06</span></div>
+
+    <!-- SLIDE 1: Welcome -->
+    <section class="slide active" id="slide-1">
+      <div class="sparkle">✧ ✦ ✧</div>
+      <div class="gift" id="gift-box" aria-label="Gift box">🎁</div>
+      <p class="eyebrow">ABHI CREATED A SUPRISE FOR YOUUU LADDU</p>
+      <h1 class="hero-title">Ready for a<br><span class="gradient-text">little surprise?</span></h1>
+      <p class="soft-copy">There are smiles, memories and a few secrets waiting inside.</p>
+      <button class="primary-btn" id="open-surprise">Open your surprise <span>→</span></button>
+      <p class="tiny-hint">Tip: keep tapping things… you never know! ✨</p>
+    </section>
+
+    <!-- SLIDE 2: Birthday -->
+    <section class="slide" id="slide-2">
+      <div class="balloon balloon-one">🎈</div><div class="balloon balloon-two">🎈</div>
+      <div class="cake-emoji">🎂</div>
+      <p class="eyebrow">Today is all about YOU</p>
+      <h1 class="birthday-title">HAPPY<br><span class="gradient-text">BIRTHDAY</span></h1>
+      <h2 class="name-display" id="friend-name">GUNNULU</h2>
+      <p class="soft-copy" id="birthday-message">May your day sparkle as brightly as your smile! 💖</p>
+      <button class="primary-btn" data-next="3">Let's make memories Together<span>→</span></button>
+    </section>
+
+    <!-- SLIDE 3: Memories -->
+    <section class="slide" id="slide-3">
+      <p class="eyebrow">A tiny collection of happy moments</p>
+      <h1 class="section-title">Memory <span class="gradient-text">lane 📸</span></h1>
+      <p class="soft-copy">Every picture holds a little bit of magic.</p>
+      <div class="photo-grid" id="photo-grid"></div>
+      <div class="video-area" id="video-area"></div>
+      <button class="primary-btn" data-next="4">A message for you <span>→</span></button>
+    </section>
+
+    <!-- SLIDE 4: Letter -->
+    <section class="slide" id="slide-4">
+      <p class="eyebrow">Written with lots of love</p>
+      <h1 class="section-title">A little <span class="gradient-text">letter 💌</span></h1>
+      <div class="letter-wrap">
+        <button class="envelope" id="open-letter" aria-label="Open letter">
+          <span class="envelope-icon">💌</span><span class="envelope-label">Tap to open</span>
+        </button>
+        <article class="letter hidden" id="letter">
+          <h2>Dear <span id="letter-name">Maya</span>,</h2>
+          <p id="special-message"></p>
+          <p class="signature" id="signature">With love, Your friend 💗</p>
+        </article>
+      </div>
+      <button class="primary-btn" data-next="5">One last surprise <span>→</span></button>
+    </section>
+
+    <!-- SLIDE 5: Click the balloons -->
+    <section class="slide" id="slide-5">
+      <p class="eyebrow">A few little secrets, just for you</p>
+      <h1 class="section-title">Pop a <span class="gradient-text">balloon 🎈</span></h1>
+      <p class="soft-copy">Tap each balloon and discover the message hidden inside.</p>
+      <div class="pop-balloon-grid" id="pop-balloon-grid">
+        <button class="pop-balloon" aria-label="Pop balloon 1"><span class="shape" style="background:#ff5ca8;--balloon-color:#ff5ca8">1</span><span class="string"></span></button>
+        <button class="pop-balloon" aria-label="Pop balloon 2"><span class="shape" style="background:#8b5cf6;--balloon-color:#8b5cf6">2</span><span class="string"></span></button>
+        <button class="pop-balloon" aria-label="Pop balloon 3"><span class="shape" style="background:#20bce9;--balloon-color:#20bce9">3</span><span class="string"></span></button>
+        <button class="pop-balloon" aria-label="Pop balloon 4"><span class="shape" style="background:#ff9f68;--balloon-color:#ff9f68">4</span><span class="string"></span></button>
+        <button class="pop-balloon" aria-label="Pop balloon 5"><span class="shape" style="background:#35c9a5;--balloon-color:#35c9a5">5</span><span class="string"></span></button>
+        <button class="pop-balloon" aria-label="Pop balloon 6"><span class="shape" style="background:#e879b5;--balloon-color:#e879b5">6</span><span class="string"></span></button>
+      </div>
+      <div class="balloon-message hidden" id="balloon-message" aria-live="polite"></div>
+      <button class="primary-btn" data-next="6">One last surprise <span>→</span></button>
+    </section>
+
+    <!-- SLIDE 5: Final surprise -->
+    <section class="slide" id="slide-5">
+      <div class="final-stars">✦ ✧ ✦ ✧ ✦</div>
+      <p class="eyebrow">Make a wish…</p>
+      <h1 class="section-title">Your wish is<br><span class="gradient-text">the beginning ✨</span></h1>
+      <div class="final-cake" id="final-cake">🧁</div>
+      <p class="soft-copy">Tap the cake to make the magic happen!</p>
+      <div class="final-message hidden" id="final-message"></div>
+      <button class="primary-btn" id="restart">Replay the surprise ↻</button>
+    </section>
+
+    <nav class="slide-dots" aria-label="Slide navigation">
+      <button class="dot active" data-slide="1" aria-label="Slide 1"></button>
+      <button class="dot" data-slide="2" aria-label="Slide 2"></button>
+      <button class="dot" data-slide="3" aria-label="Slide 3"></button>
+      <button class="dot" data-slide="4" aria-label="Slide 4"></button>
+      <button class="dot" data-slide="5" aria-label="Slide 5"></button>\n      <button class="dot" data-slide="6" aria-label="Slide 6"></button>
+    </nav>
+    <footer>Made with ✨ and a little bit of mischief</footer>
+  </main>
+
+  <audio id="background-music" loop></audio>
+  <script>
+/*
+  🎀 EASY CUSTOMIZATION — change the values below!
+  Replace the sample image files inside /images and video files inside /videos.
+  Keep filenames the same, OR update the filenames here.
+*/
+
+const birthdayConfig = {
+  friendName: "LOVEE", // <-- Change to your friend's name
+
+  birthdayMessage: "May your day sparkle as brightly as your smile! 💖",
+
+  specialMessage: `Happy birthday, LOVE! 🎂
+
+Thank you for bringing so much laughter and happiness into the world.
+May this new year of your life be full of beautiful memories,
+big dreams, little adventures and endless reasons to smile.
+
+Never forget how special you are. Keep shining! ✨`,
+
+  signature: "With lots of love, ABHII 💗",
+
+  finalMessage: "May every wish in your heart find its way to you. Happy Birthday  BANGARAMUU LOVE YOU !! LOVE YOU SOO MUCHHH 🌟",
+
+  
+photos: [
+  { file: "images/ONE.jpeg", caption: "Beautiful memories 💖" },
+  { file: "images/TWO.jpeg", caption: "Keep smiling ✨" },
+  { file: "images/THREE.jpeg", caption: "Our happy moments 🌸" },
+  { file: "images/FOUR.jpeg", caption: "Stay magical 🎀" },
+  { file: "images/FIVE.jpeg", caption: "Forever special 💕" }
+],
+
+
+  // Add videos by placing .mp4 files in the videos folder and listing them below.
+  videos: [
+    // Example: { file: "videos/memory1.mp4", caption: "A video memory 💞" }
+  ],
+
+  // Optional: place an audio file in music/ and enter its path here.
+  // Browsers usually start music only after the visitor taps the first button.
+  musicFile: "", // Example: "music/birthday-song.mp3"
+};
+
+const $ = (id) => document.getElementById(id);
+let currentSlide = 1;
+
+function showSlide(number) {
+  currentSlide = Math.max(1, Math.min(6, number));
+  document.querySelectorAll(".slide").forEach((slide, index) => {
+    slide.classList.toggle("active", index + 1 === currentSlide);
+  });
+  document.querySelectorAll(".dot").forEach((dot, index) => {
+    dot.classList.toggle("active", index + 1 === currentSlide);
+  });
+  $("slide-counter").textContent = `${String(currentSlide).padStart(2,"0")} / 06`;
+  if (currentSlide === 2) burstConfetti(100);
+}
+
+function burstConfetti(amount = 60) {
+  const layer = $("confetti-layer");
+  const colors = ["#ff5ca8","#8b5cf6","#55d9ff","#ffe66d","#6ee7b7","#ff9966"];
+  for (let i = 0; i < amount; i++) {
+    const bit = document.createElement("span");
+    bit.className = "confetti";
+    bit.style.left = Math.random() * 100 + "%";
+    bit.style.background = colors[Math.floor(Math.random() * colors.length)];
+    bit.style.animationDuration = (2.5 + Math.random() * 3) + "s";
+    bit.style.animationDelay = Math.random() * .7 + "s";
+    bit.style.transform = `rotate(${Math.random()*360}deg)`;
+    layer.appendChild(bit);
+    setTimeout(() => bit.remove(), 6500);
+  }
+}
+
+function floatHearts() {
+  const layer = $("hearts-layer");
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = ["💖","💕","💗","✨","🌸"][Math.floor(Math.random()*5)];
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.animationDuration = (4 + Math.random()*3) + "s";
+  layer.appendChild(heart);
+  setTimeout(() => heart.remove(), 7500);
+}
+
+function renderPhotos() {
+  const grid = $("photo-grid");
+  birthdayConfig.photos.forEach((photo, index) => {
+    const card = document.createElement("div");
+    card.className = "photo-card";
+    card.style.setProperty("--tilt", `${[-3,2,-2,3,-1][index % 5]}deg`);
+    const img = document.createElement("img");
+    img.src = photo.file;
+    img.alt = photo.caption || "Birthday memory";
+    img.onerror = () => { img.src = "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22800%22%3E%3Crect%20width%3D%22600%22%20height%3D%22800%22%20fill%3D%22%23f4eaff%22/%3E%3Ctext%20x%3D%22300%22%20y%3D%22400%22%20text-anchor%3D%22middle%22%20font-size%3D%2270%22%3EAdd%20your%20photo%20%F0%9F%93%B7%3C/text%3E%3C/svg%3E"; };
+    const caption = document.createElement("p");
+    caption.textContent = photo.caption || "A happy memory";
+    card.append(img, caption);
+    card.addEventListener("click", () => burstConfetti(22));
+    grid.appendChild(card);
+  });
+}
+
+function renderVideos() {
+  const area = $("video-area");
+  birthdayConfig.videos.filter(v => v.file).forEach(video => {
+    const card = document.createElement("div");
+    card.className = "video-card";
+    const player = document.createElement("video");
+    player.src = video.file;
+    player.controls = true;
+    player.playsInline = true;
+    player.preload = "metadata";
+    const caption = document.createElement("p");
+    caption.textContent = video.caption || "A special video memory";
+    card.append(player, caption);
+    area.appendChild(card);
+  });
+}
+
+function setup() {
+  $("friend-name").textContent = birthdayConfig.friendName;
+  $("letter-name").textContent = birthdayConfig.friendName;
+  $("birthday-message").textContent = birthdayConfig.birthdayMessage;
+  $("special-message").textContent = birthdayConfig.specialMessage;
+  $("signature").textContent = birthdayConfig.signature;
+  $("final-message").textContent = birthdayConfig.finalMessage;
+
+  renderPhotos();
+  renderVideos();
+
+  $("open-surprise").addEventListener("click", () => {
+    showSlide(2);
+    burstConfetti(120);
+    if (birthdayConfig.musicFile) {
+      $("background-music").src = birthdayConfig.musicFile;
+      $("background-music").play().catch(() => {});
+    }
+  });
+
+  document.querySelectorAll("[data-next]").forEach(button => {
+    button.addEventListener("click", () => showSlide(Number(button.dataset.next)));
+  });
+  document.querySelectorAll(".dot").forEach(dot => {
+    dot.addEventListener("click", () => showSlide(Number(dot.dataset.slide)));
+  });
+
+
+  const balloonMessages = [
+    "You make my days brighter than all these balloons 💖",
+    "Your smile is my favourite little happiness 😊",
+    "You are my sweetest surprise, every single day 💕",
+    "I wish I could give you a thousand hugs right now 🤗",
+    "No matter what, you will always be so special to me 🌷",
+    "One more secret: I love making you smile, bangaramuu! ✨"
+  ];
+  document.querySelectorAll(".pop-balloon").forEach((balloon, index) => {
+    balloon.addEventListener("click", () => {
+      balloon.classList.add("popped");
+      const message = $("balloon-message");
+      message.textContent = balloonMessages[index];
+      message.classList.remove("hidden");
+      burstConfetti(24);
+    });
+  });
+
+  $("open-letter").addEventListener("click", () => {
+    $("letter").classList.remove("hidden");
+    $("open-letter").classList.add("hidden");
+    burstConfetti(35);
+  });
+
+  $("final-cake").addEventListener("click", () => {
+    $("final-cake").textContent = "🎂";
+    $("final-message").classList.remove("hidden");
+    burstConfetti(150);
+    for (let i=0;i<12;i++) setTimeout(floatHearts, i*180);
+  });
+
+  $("gift-box").addEventListener("click", () => {
+    $("gift-box").style.transform = "scale(1.2) rotate(15deg)";
+    burstConfetti(35);
+  });
+
+  $("restart").addEventListener("click", () => {
+    $("letter").classList.add("hidden");
+    $("open-letter").classList.remove("hidden");
+    $("final-message").classList.add("hidden");
+    $("final-cake").textContent = "🧁";
+    showSlide(1);
+  });
+
+  setInterval(floatHearts, 1300);
+}
+document.addEventListener("DOMContentLoaded", setup);
+
+</script>
+</body>
+</html>
