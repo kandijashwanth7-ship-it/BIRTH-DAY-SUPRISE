@@ -249,7 +249,7 @@ function renderPhotos() {
   birthdayConfig.photos.forEach((photo, index) => {
     const card = document.createElement("div");
     card.className = "photo-card";
-    card.style.setProperty("--tilt", `${[-3,2,-2,3,-1][index % 5]}deg`);
+    card.style.setProperty("--tilt", `${[-3,2,-2,3,-1,-1][index % 6]}deg`);
     const img = document.createElement("img");
     img.src = photo.file;
     img.alt = photo.caption || "Birthday memory";
